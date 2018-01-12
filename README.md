@@ -12,22 +12,22 @@ By default it'll upload IPs you block to the DenyHosts sync server to share with
 
 ```
 docker run -d \
-	--name DenyHosts \
+	--name denyhosts \
 	--restart=always \
 	-v /var/log/auth.log:/var/log/auth.log:ro \
 	-v /etc/hosts.deny:/etc/hosts.deny \
-	adriel/denyhosts
+	heinedej/denyhosts-docker:arm32v7
 ```
 
 ### CentOS
 
 ```
 docker run -d \
-	--name DenyHosts \
+	--name denyhosts \
 	--restart=always \
 	-v /var/log/secure:/var/log/secure:ro \
 	-v /etc/hosts.deny:/etc/hosts.deny \
-	adriel/denyhosts
+	heinedej/denyhosts-docker:arm32v7
 ```
 
 
@@ -38,16 +38,16 @@ Overwrite `denyhosts.conf` with your own settings:
 
 ```
 docker run -d \
-	--name DenyHosts \
+	--name denyhosts \
 	--restart=always \
 	-v /var/log/secure:/var/log/secure:ro \
 	-v /etc/hosts.deny:/etc/hosts.deny \
 	-v /your/location/denyhosts.conf:/etc/denyhosts.conf \
-	adriel/denyhosts
+	heinedej/denyhosts-docker:arm32v7
 ```
 
 
 
 ## docker-compose
 
-There is a example [docker-compose.yml](https://github.com/adriel/denyhosts-docker/blob/master/docker-compose.yml) file included in the repository to help you get started if you use docker-compose.
+There is a example [docker-compose.yml](https://github.com/heinedej/denyhosts-docker/blob/master/docker-compose.yml) file included in the repository to help you get started if you use docker-compose.
