@@ -1,6 +1,6 @@
 #! /usr/bin/env sh
 set -eu
-set -o pipefail
+# set -o pipefail
 
 PID_FILE='/var/run/denyhosts.pid'
 
@@ -13,4 +13,4 @@ if [ -f "$PID_FILE" ]; then
   rm -r "$PID_FILE"
 fi
 
-exec python /usr/bin/denyhosts.py --config /etc/denyhosts.conf --noemail --sync --foreground
+exec python /usr/local/bin/denyhosts.py --config /etc/denyhosts.conf --noemail --sync --foreground
