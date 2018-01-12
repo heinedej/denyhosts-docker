@@ -1,8 +1,8 @@
 version: "3.3"
 services:
   denyhosts:
-    container_name: DenyHosts
-    restart: unless-stopped
-    image: "adriel/denyhosts"
+    image: "heinedej/denyhosts-docker:arm32v7"
     volumes:
       - /var/log/auth.log:/var/log/auth.log:ro
+      - /etc/hosts.deny:/etc/hosts.deny
+      - /etc/denyhosts.conf:/etc/denyhosts.conf:ro
